@@ -27,6 +27,15 @@ namespace CSharp8583.Tests
         }
 
         [Fact]
+        public void ASCI_Message_FPS_9210_Parsed()
+        {
+            Console.Write(Iso8583.GetRawDebug(ConstantValues.ASCIIBytes9210FPS));
+            FPSMessage asciiMessage = _iso8583.Parse<FPSMessage>(ConstantValues.ASCIIBytes9210FPS);
+            Assert.NotNull(asciiMessage);
+
+        }
+
+        [Fact]
         public void ASCII_Message_All_ISO_Fields_Parsed()
         {
             Console.Write(Iso8583.GetRawDebug(ConstantValues.ASCIIBytes));
